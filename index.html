@@ -25,8 +25,8 @@
         <div class="row">
             <div class="col">
                 <form id="formulario" onsubmit="return false">
-                    <input type="text" name="encontrar" id="encontrar" placeholder="Buscar">
-                    <button type="button" class="btn btn-primary btn-sm px-3" onclick="buscar()">Buscar</button>
+                    <input type="text" name="encontrar" id="encontrar" onkeypress="checkearTecla(event)" placeholder="Ingrese el nombre de su Banda favorita" style="width: 288px;">
+                    <button type="button" class="btn btn-primary btn-sm px-3" onclick="buscar()" style="margin-top: 8px;margin-left: 8px;">Buscar</button>
                 </form>
             </div>
             <div class="col">
@@ -40,7 +40,7 @@
     <!--Inicio imagen y logo-->
     <div class="container-fluid">
         <div class="row py-5 ">
-            <div class="col" id="imagen"></div>
+            <div class="col imagen" id="imagen"></div>
             <div class="col">
                 <div id="banda" class="card-title"></div>
                 <ul>
@@ -59,13 +59,13 @@
         <!--Inicio biografía-->
 
         <h2 class="text-center ">Biografía</h2>
-        <div class="container borde" id="biografia"></div>
+        <div class="container borde mt-3" id="biografia"></div>
         <!--Fin biografía-->
 
         <!--Inicio discografía-->
         <h2 class="text-center mt-3 ">Discografía</h2>
         <div class="row">
-            <div class="col-auto container borde w-50 rectangulo " id="album">
+            <div class="col-8 container borde w-50 rectangulo mt-3" id="album">
             </div>
         </div>
         <!--Fin discografía-->
@@ -73,11 +73,9 @@
     <!--Fin gran contenedor-->
 
     <!--Inicio footer-->
-    <div class="container-fluid py-4 ">
+    <div class="container-fluid bg-light mt-3 py-2 footer">
         <div class="row ">
-            <div class="col ">
                 <p class="text-center fs-3">@ Copyright 2022 - Mi Banda</p>
-            </div>
         </div>
     </div>
     <!--Fin footer-->

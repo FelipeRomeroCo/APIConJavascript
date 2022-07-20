@@ -2,7 +2,7 @@ function desplegarResultado() {
     const artista = JSON.parse(this.responseText);
     const img = document.createElement("img");
     img.src = artista.artists[0].strArtistThumb;
-    img.style="width:100%"
+    img.style="width:100%;border-radius:1em;"
     const imagen = document.getElementById("imagen");
     imagen.innerHTML = "";
     imagen.appendChild(img);
@@ -54,10 +54,10 @@ function desplegarDiscografia() {
         const fila = document.createElement("div")
         fila.className = "row"
         const disco = document.createElement("div")
-        disco.className = "col-4"
+        disco.className = "col-6 text-center"
         disco.innerHTML = disc.strAlbum
         const anno = document.createElement("div")
-        anno.className = "col-4"
+        anno.className = "col-6 text-center"
         anno.innerHTML = disc.intYearReleased
         fila.appendChild(disco)
         fila.appendChild(anno)
@@ -76,4 +76,11 @@ function buscar() {
     request2.addEventListener('load', desplegarDiscografia);
     request2.open('GET', 'https://theaudiodb.com/api/v1/json/2/discography.php?s=' + busqueda);
     request2.send();
+}
+
+function checkearTecla(e)
+{
+	if(e.keyCode == 13) 
+        buscar();
+	return true;
 }
